@@ -32,13 +32,13 @@
 					{
 						"name": "Show Environment",
 						"definition": "Show Environment",
-						"command": "env|sort",
+						"command": "env|sort\ngo version",
 						"properties": null
 					},
 					{
 						"name": "Get Dependencies",
 						"definition": "Get Dependencies",
-						"command": "go get -t -d ./...\ngo get gotest.tools/gotestsum\n",
+						"command": "go get -d ./...\n",
 						"properties": null
 					},
 					{
