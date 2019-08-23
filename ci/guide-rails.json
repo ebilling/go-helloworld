@@ -32,19 +32,19 @@
 					{
 						"name": "Get Dependencies",
 						"definition": "Get Dependencies",
-						"command": "go get -t -d ./...",
+						"command": "go get -t -d ./...\ngo get gotest.tools/gotestsum",
 						"properties": null
 					},
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "set -o pipefail\nginkgo -cover -r -v -skipPackage=pb,test,mock,proto -outputdir=./ | tee ginkgo.output",
+						"command": "gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...",
 						"properties": null
 					},
 					{
 						"name": "Convert coverage",
 						"definition": "Convert coverage",
-						"command": "cat ginkgo.output 2\u003e\u00261 | go-junit-report \u003e test.xml\ngocov convert *.coverprofile | gocov-xml \u003e coverage.xml",
+						"command": "gocov convert cover.out | gocov-xml \u003e coverage.xml",
 						"properties": null
 					},
 					{
