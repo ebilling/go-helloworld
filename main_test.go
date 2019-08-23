@@ -12,7 +12,7 @@ const (
 	teststring = "A test string for the main tests"
 )
 
-func TestThisPackage(t *testing.T) {
+func TestTheMainFunction(t *testing.T) {
 	os.Args = []string{"test", teststring}
 	orig, r, w := captureStdOut()
 	main()
