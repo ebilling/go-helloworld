@@ -38,13 +38,13 @@
 					{
 						"name": "Get Dependencies",
 						"definition": "Get Dependencies",
-						"command": "go get -t -d ./...\n",
+						"command": "set -ex \ngo get -t -d ./...\n",
 						"properties": null
 					},
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$?\necho \"Exiting with $exitval\"\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $exitval",
+						"command": "set -ex\ngotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$?\necho \"Exiting with $exitval\"\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $exitval",
 						"properties": null
 					}
 				],
