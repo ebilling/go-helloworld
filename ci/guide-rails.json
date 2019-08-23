@@ -44,7 +44,7 @@
 					{
 						"name": "Build Binary",
 						"definition": "Build Binary",
-						"command": "go build",
+						"command": "go build ",
 						"properties": null
 					},
 					{
