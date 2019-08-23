@@ -44,7 +44,7 @@
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "set -ex\nsetterm -term linux\ngotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$?\necho \"Exiting with $exitval\"\ngocov convert cover.out \u003e cover.json\ngocov-xml \u003c cover.json \u003e coverage.xml\nexit $exitval",
+						"command": "set -ex\nsetterm -term linux\ncd \"$GOPATH/src/github.com/ebilling/go-helloworld\"\ngotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$?\necho \"Exiting with $exitval\"\ngocov convert cover.out \u003e cover.json\ngocov-xml \u003c cover.json \u003e coverage.xml\nexit $exitval",
 						"properties": null
 					}
 				],
