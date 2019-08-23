@@ -50,7 +50,7 @@
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\n\nexitval=$?\n\necho \"Exiting with $exitval\"\n\ngocov convert cover.out | gocov-xml \u003e coverage.xml\n\nexit $exitval",
+						"command": "gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\n\nexitval=$?\n\necho \"Exiting with $exitval\"\n\ngocov convert cover.out | gocov-xml \u003e coverage.xml\n\ncp coverage.xml test.xml \"${BUILD_LOGS_DIR}/.\"\n\nexit $exitval",
 						"properties": null
 					}
 				],
