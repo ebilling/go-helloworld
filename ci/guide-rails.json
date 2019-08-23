@@ -38,7 +38,7 @@
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "$GOPATH/bin/gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\nexitval=$1\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $1",
+						"command": "$GOPATH/bin/gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\nexitval=$1\necho \"Exiting with $1\"\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $1",
 						"properties": null
 					},
 					{
