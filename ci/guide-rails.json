@@ -38,25 +38,13 @@
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...",
+						"command": "$GOPATH/bin/gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\nexitval=$1\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $1",
 						"properties": null
 					},
 					{
 						"name": "Convert coverage",
 						"definition": "Convert coverage",
-						"command": "gocov convert cover.out | gocov-xml \u003e coverage.xml",
-						"properties": null
-					},
-					{
-						"name": "Build",
-						"definition": "Build",
-						"command": "go build -o ((application.name))",
-						"properties": null
-					},
-					{
-						"name": "Build Instrumented",
-						"definition": "Build Instrumented",
-						"command": "go test -c -coverpkg=all -covermode=count -o ((application.name))-instrumented",
+						"command": "",
 						"properties": null
 					}
 				],
