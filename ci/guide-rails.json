@@ -30,21 +30,21 @@
 				"segment_type": "build",
 				"job_steps": [
 					{
+						"name": "Show Environment",
+						"definition": "Show Environment",
+						"command": "env|sort",
+						"properties": null
+					},
+					{
 						"name": "Get Dependencies",
 						"definition": "Get Dependencies",
-						"command": "go get -t -d ./...\ngo get gotest.tools/gotestsum",
+						"command": "go get -t -d ./...\ngo get gotest.tools/gotestsum\n",
 						"properties": null
 					},
 					{
 						"name": "Unit Tests",
 						"definition": "Unit Tests",
-						"command": "export TERM=xterm-256color\n$GOPATH/bin/gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$1\necho \"Exiting with $1\"\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $1",
-						"properties": null
-					},
-					{
-						"name": "Convert coverage",
-						"definition": "Convert coverage",
-						"command": "",
+						"command": "export TERM=xterm-256color\n$GOPATH/bin/gotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\ncp test.xml cover.out \"${BUILD_LOGS_DIR}/.\"\nexitval=$?\necho \"Exiting with $exitval\"\ngocov convert cover.out | gocov-xml \u003e coverage.xml\nexit $exitval",
 						"properties": null
 					}
 				],
