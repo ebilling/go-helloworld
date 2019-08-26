@@ -52,6 +52,12 @@
 						"definition": "Unit Tests",
 						"command": "export LANG=C.UTF-8\nexport SHLVL=0\ngotestsum -f short-verbose --junitfile test.xml -- -coverprofile=cover.out ./...\n\nexitval=$?\n\necho \"Exiting with $exitval\"\n\ngocov convert cover.out | gocov-xml \u003e coverage.xml\n\ntest $exitval -ne 0 \u0026\u0026 exit $exitval || echo \"Tests passed\"",
 						"properties": null
+					},
+					{
+						"name": "ShowFilesystem",
+						"definition": "ShowFilesystem",
+						"command": "set -x \ndf -sk\n",
+						"properties": null
 					}
 				],
 				"exit_actions": {
