@@ -32,7 +32,7 @@
 					{
 						"name": "Show Environment",
 						"definition": "Show Environment",
-						"command": "env|sort\ngo version\n",
+						"command": "set -ex \nenv|sort\n",
 						"properties": null
 					},
 					{
