@@ -56,7 +56,7 @@
 					{
 						"name": "ShowFilesystem",
 						"definition": "ShowFilesystem",
-						"command": "set -x \ndf -sk\n",
+						"command": "set -x \ndf -k\n",
 						"properties": null
 					}
 				],
