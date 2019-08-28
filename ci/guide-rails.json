@@ -32,7 +32,7 @@
 					{
 						"name": "Show Environment",
 						"definition": "Show Environment",
-						"command": "set -ex \nenv|sort\n",
+						"command": "set -ex \nenv|sort\necho \"end\"",
 						"properties": null
 					},
 					{
